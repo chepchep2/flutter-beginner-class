@@ -48,7 +48,7 @@ class Birth1 extends StatelessWidget {
                       style: TextStyle(fontSize: 32),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
