@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_beginner_class/23_12_20/model/star.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +17,26 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const StarWidget(),
+      home: StarWidget(
+        star: Star(
+          title: '무키베츠',
+          subTitle: '무키 베츠 최고',
+          imageUrl:
+              'https://wallpapers.com/images/hd/mookie-betts-long-torch-y25uqlhjeuui0h9f.jpg',
+          description: '어쩌고 저쩌고',
+        ),
+      ),
     );
   }
 }
 
 class StarWidget extends StatefulWidget {
-  const StarWidget({super.key});
+  final Star star;
+
+  const StarWidget({
+    super.key,
+    required this.star,
+  });
 
   @override
   State<StarWidget> createState() => _CampingWidgetState();
@@ -35,22 +49,20 @@ class _CampingWidgetState extends State<StarWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KFnDy0YooMSS9zCneMmiFPDuvUDyTzAmGA&usqp=CAU',
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Image.network(
+                widget.star.imageUrl,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              secondArea(),
-              thirdArea(),
-              forthArea(),
-            ],
-          ),
+            ),
+            secondArea(),
+            thirdArea(),
+            forthArea(),
+          ],
         ),
       ),
     );
@@ -61,19 +73,19 @@ class _CampingWidgetState extends State<StarWidget> {
       padding: const EdgeInsets.all(32.0),
       child: Row(
         children: [
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Title',
-                style: TextStyle(
+                widget.star.title,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'sub title',
-                style: TextStyle(
+                widget.star.subTitle,
+                style: const TextStyle(
                   color: Colors.grey,
                 ),
               ),
@@ -129,16 +141,17 @@ class _CampingWidgetState extends State<StarWidget> {
       ],
     );
   }
-}
 
-Widget forthArea() {
-  return const Padding(
-    padding: EdgeInsets.all(32.0),
-    child: Text(
-        '''Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  '''),
-  );
+  Widget forthArea() {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Text(
+        widget.star.description,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 2,
+      ),
+    );
+  }
 }
 
 class IconButtonWidget extends StatelessWidget {
