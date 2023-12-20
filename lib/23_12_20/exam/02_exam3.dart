@@ -27,6 +27,9 @@ class Birth3 extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Stack(
             children: [
+              Center(
+                child: Lottie.asset('assets/lottie/sample.json'),
+              ),
               const Center(
                 child: Column(
                   children: [
@@ -41,7 +44,6 @@ class Birth3 extends StatelessWidget {
                   ],
                 ),
               ),
-              Center(child: Lottie.asset('assets/lottie/sample.json')),
             ],
           ),
         ),
