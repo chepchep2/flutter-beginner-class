@@ -57,6 +57,7 @@ class UtubeWidget extends StatelessWidget {
               const Icon(Icons.face_2_outlined),
               const SizedBox(width: 20),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title),
                   Text(subTitle),
