@@ -22,26 +22,30 @@ class Birth3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Stack(
             children: [
+              Center(
+                child: Lottie.asset('assets/lottie/sample.json'),
+              ),
               const Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Happy Birthday Sam!',
-                      style: TextStyle(fontSize: 32),
+                      '즐거운 성탄절 되세요!',
+                      style: TextStyle(fontSize: 32, color: Colors.white),
                     ),
                     Text(
-                      '- from Emma',
-                      style: TextStyle(fontSize: 16),
+                      '- from 조상우',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ],
                 ),
               ),
-              Center(child: Lottie.asset('assets/lottie/sample.json')),
             ],
           ),
         ),
