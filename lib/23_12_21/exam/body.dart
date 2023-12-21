@@ -1,49 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/00_repository/star_repository.dart';
+import 'package:flutter_beginner_class/23_12_20/model/star.dart';
 
-class Body extends StatefulWidget {
+class Body extends StatelessWidget {
   final repository = StarRepository();
-
   Body({super.key});
 
   @override
-  State<Body> createState() => _BodyState();
-}
-
-class _BodyState extends State<Body> {
-  @override
   Widget build(BuildContext context) {
+    final stars = repository.getStars();
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: ListView(
-        children: [
-          utube(),
-        ],
+        children: stars
+            .map((e) => UtubeWidget(
+                  imageUrl: e.imageUrl,
+                  title: e.title,
+                  subTitle: e.subTitle,
+                  description: e.description,
+                ))
+            .toList(),
       ),
     );
   }
+}
 
-  Widget utube() {
-    return Column(
-      children: [
-        Container(
-          child: Image.network(
-              'https://wallpapers.com/images/hd/mookie-betts-long-torch-y25uqlhjeuui0h9f.jpg'),
-        ),
-        const Row(
-          children: [
-            Icon(Icons.face_2),
-            SizedBox(width: 20),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('제목 - ㅋㅋㅋ'),
-                Text('침착맨'),
-              ],
-            ),
-          ],
-        ),
-      ],
+class UtubeWidget extends StatelessWidget {
+  final String imageUrl;
+  final String title;
+  final String subTitle;
+  final String description;
+
+  const UtubeWidget({
+    super.key,
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Column(
+        children: [
+          Image.network(
+            imageUrl,
+            width: 500,
+            // height: 100,
+            fit: BoxFit.cover,
+          ),
+          Row(
+            children: [
+              const Icon(Icons.face_2_outlined),
+              const SizedBox(width: 20),
+              Column(
+                children: [
+                  Text(title),
+                  Text(subTitle),
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
