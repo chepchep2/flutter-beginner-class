@@ -23,6 +23,30 @@ class Xylophone extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
 
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('자이로폰'),
+      ),
+      body: Row(
+        children: [
+          gunban('도', Colors.red),
+          gunban('레', Colors.yellow),
+        ],
+      ),
+    );
   }
+}
+
+Widget gunban(String text, Color color) {
+  return Container(
+    width: 50,
+    height: double.infinity,
+    color: color,
+    child: Center(
+      child: Text(
+        text,
+        style: const TextStyle(color: Colors.white),
+      ),
+    ),
+  );
 }
