@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       home: StarWidget(
         star: Star(
+          id: 1,
           title: '무키베츠',
           subTitle: '무키 베츠 최고',
           imageUrl:

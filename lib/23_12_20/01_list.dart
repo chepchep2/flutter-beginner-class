@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_beginner_class/00_repository/star_repository.dart';
 import 'package:flutter_beginner_class/23_12_20/00_ui_basic.dart';
 import 'package:flutter_beginner_class/23_12_20/model/star.dart';
 
@@ -24,27 +25,13 @@ class MyApp extends StatelessWidget {
 }
 
 class StarListScreen extends StatelessWidget {
-  final List<Star> stars = [
-    Star(
-      title: '무키베츠',
-      subTitle: '무키 베츠 최고',
-      imageUrl:
-          'https://wallpapers.com/images/hd/mookie-betts-long-torch-y25uqlhjeuui0h9f.jpg',
-      description: '어쩌고 저쩌고',
-    ),
-    Star(
-      title: '무키베츠',
-      subTitle: '무키 베츠 최고',
-      imageUrl:
-          'https://wallpapers.com/images/hd/mookie-betts-long-torch-y25uqlhjeuui0h9f.jpg',
-      description: '어쩌고 저쩌고',
-    ),
-  ];
+  final repository = StarRepository();
 
   StarListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final stars = repository.getStars();
     return Scaffold(
       appBar: AppBar(
         title: const Text('나만의 스타'),
