@@ -59,8 +59,27 @@ class UtubeWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title),
-                  Text(subTitle),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  const Row(
+                    children: [
+                      Text(
+                        'MLB - ',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        '조회수 10회 - ',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        '9시간 전',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  )
                 ],
               )
             ],
