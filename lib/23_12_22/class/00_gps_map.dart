@@ -42,6 +42,19 @@ class MapSampleState extends State<MapSample> {
       zoom: 19.151926040649414);
 
   @override
+  void initState() {
+    super.initState();
+
+    init();
+  }
+
+  Future init() async {
+    final position = await _determinePosition();
+
+    print(position.toString());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
@@ -61,7 +74,13 @@ class MapSampleState extends State<MapSample> {
 
   Future<void> _goToTheLake() async {
     final GoogleMapController controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+    final position = await Geolocator.getCurrentPosition();
+    final cameraPosition = CameraPosition(
+      target: LatLng(position.latitude, position.longitude),
+      zoom: 15,
+    );
+    await controller
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
   }
 
   Future<Position> _determinePosition() async {
