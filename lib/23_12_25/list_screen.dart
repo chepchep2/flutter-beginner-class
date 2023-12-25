@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/23_12_25/create_screen.dart';
 import 'package:flutter_beginner_class/23_12_25/todo.dart';
+import 'package:flutter_beginner_class/23_12_25/todo_item.dart';
 import 'package:flutter_beginner_class/23_12_25/todolist.dart';
 
 class ListScreen extends StatefulWidget {
@@ -18,14 +19,7 @@ class _ListScreenState extends State<ListScreen> {
         title: const Text('Todo 리스트'),
       ),
       body: ListView(
-        children: todos.values
-            .map(
-              (todo) => ListTile(
-                title: Text(todo.title),
-                subtitle: Text('${todo.dateTime}'),
-              ),
-            )
-            .toList(),
+        children: todos.values.map((todo) => TodoItem(todo: todo)).toList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
