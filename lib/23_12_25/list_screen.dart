@@ -19,7 +19,17 @@ class _ListScreenState extends State<ListScreen> {
         title: const Text('Todo 리스트'),
       ),
       body: ListView(
-        children: todos.values.map((todo) => TodoItem(todo: todo)).toList(),
+        children: todos.values
+            .map((e) => TodoItem(
+                  todo: e,
+                  onTap: (todo) async {
+                    todo.isDone = !todo.isDone;
+                    await todo.save();
+
+                    setState(() {});
+                  },
+                ))
+            .toList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
