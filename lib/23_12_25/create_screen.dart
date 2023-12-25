@@ -7,7 +7,15 @@ class CreateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Todo 작성 '),
+        backgroundColor: Colors.blue,
+        title: const Text(
+          'Todo 작성',
+        ),
+        actions: const [
+          Icon(
+            Icons.done,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
