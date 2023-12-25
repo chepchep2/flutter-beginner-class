@@ -9,6 +9,10 @@ class ListScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Todo 리스트'),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
