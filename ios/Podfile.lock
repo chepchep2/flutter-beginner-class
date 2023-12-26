@@ -12,6 +12,9 @@ PODS:
     - GoogleMaps/Base
   - image_picker_ios (0.0.1):
     - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - sensors_plus (0.0.1):
     - Flutter
   - soundpool (0.0.1):
@@ -24,6 +27,7 @@ DEPENDENCIES:
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - soundpool (from `.symlinks/plugins/soundpool/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
@@ -41,6 +45,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_maps_flutter_ios/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   sensors_plus:
     :path: ".symlinks/plugins/sensors_plus/ios"
   soundpool:
@@ -54,6 +60,7 @@ SPEC CHECKSUMS:
   google_maps_flutter_ios: 590249c67f34f422122c232f2a626192adbc78ee
   GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
   image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   sensors_plus: 42b9de1b8237675fa8d8121e4bb93be0f79fa61d
   soundpool: c7f4422ca206e77f8900ed3c4ee6a6ff5a0e38a9
   webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f

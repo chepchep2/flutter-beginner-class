@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/23_12_25/todo.dart';
 import 'package:flutter_beginner_class/23_12_25/todolist.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class CreateScreen extends StatefulWidget {
@@ -57,7 +58,8 @@ class _CreateScreenState extends State<CreateScreen> {
                 ));
               }
               if (mounted) {
-                Navigator.pop(context);
+                // Navigator.pop(context);
+                context.pop();
               }
 
               // 기존
