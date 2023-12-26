@@ -31,7 +31,7 @@ class TodoItem extends StatelessWidget {
       ),
       subtitle: Text(
         DateFormat.yMMMd()
-            .format(DateTime.fromMicrosecondsSinceEpoch(todo.dateTime)),
+            .format(DateTime.fromMillisecondsSinceEpoch(todo.dateTime)),
         style: TextStyle(color: todo.isDone ? Colors.grey : Colors.black),
       ),
       trailing: todo.isDone
