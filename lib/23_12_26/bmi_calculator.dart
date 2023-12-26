@@ -23,18 +23,54 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final _formKey = GlobalKey<FormState>();
+  // form의 상태를 가지고 있다.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('비만도 계산기'),
       ),
-      body: Form(
-        child: Column(
-          children: [
-            TextFormField(),
-            TextFormField(),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextFormField(
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), hintText: '키'),
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '키를 입력하세요';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 8),
+              TextFormField(
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), hintText: '몸무게'),
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '몸무게를 입력하세요';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 8),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState?.validate() ?? false) {}
+                },
+                child: const Text('결과'),
+              ),
+            ],
+          ),
         ),
       ),
     );
