@@ -42,6 +42,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           Icons.smart_display,
           color: Colors.red,
         ),
+        title: const Text('YouTube'),
         actions: const [
           Icon(Icons.cast_for_education),
           Icon(Icons.notifications),
