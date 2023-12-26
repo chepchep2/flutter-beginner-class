@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/00_repository/star_repository.dart';
-import 'package:flutter_beginner_class/23_12_20/model/star.dart';
 
 class Body extends StatelessWidget {
   final repository = StarRepository();

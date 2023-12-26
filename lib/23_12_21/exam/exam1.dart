@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beginner_class/00_repository/star_repository.dart';
-import 'package:flutter_beginner_class/23_12_20/00_ui_basic.dart';
 import 'package:flutter_beginner_class/23_12_21/exam/body.dart';
-import 'package:flutter_beginner_class/23_12_21/exam/model/my_app_bar.dart';
+import 'package:flutter_beginner_class/23_12_21/exam/my_app_bar.dart';
 
 void main() {
   runApp(const MyApp());
