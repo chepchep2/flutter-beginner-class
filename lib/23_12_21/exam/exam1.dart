@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/00_repository/star_repository.dart';
 import 'package:flutter_beginner_class/23_12_20/00_ui_basic.dart';
 import 'package:flutter_beginner_class/23_12_21/exam/body.dart';
+import 'package:flutter_beginner_class/23_12_21/exam/model/my_app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,22 +29,23 @@ class Youtube extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.smart_display,
-          color: Colors.red,
-        ),
-        title: const Text(
-          'YouTube',
-        ),
-        actions: const [
-          Icon(Icons.cast_for_education),
-          Icon(Icons.notifications),
-          Icon(Icons.search),
-          Icon(Icons.face_6),
-          SizedBox(width: 20),
-        ],
-      ),
+      appBar: MyAppBar(),
+      // AppBar(
+      //   leading: const Icon(
+      //     Icons.smart_display,
+      //     color: Colors.red,
+      //   ),
+      //   title: const Text(
+      //     'YouTube',
+      //   ),
+      //   actions: const [
+      //     Icon(Icons.cast_for_education),
+      //     Icon(Icons.notifications),
+      //     Icon(Icons.search),
+      //     Icon(Icons.face_6),
+      //     SizedBox(width: 20),
+      //   ],
+      // ),
       body: Body(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
