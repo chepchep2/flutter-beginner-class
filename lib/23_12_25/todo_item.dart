@@ -27,7 +27,10 @@ class TodoItem extends StatelessWidget {
             ),
       title: Text(
         todo.title,
-        style: TextStyle(color: todo.isDone ? Colors.grey : Colors.black),
+        style: TextStyle(
+            color: todo.isDone ? Colors.grey : Colors.black,
+            decoration:
+                todo.isDone ? TextDecoration.lineThrough : TextDecoration.none),
       ),
       subtitle: Text(
         DateFormat.yMMMd()

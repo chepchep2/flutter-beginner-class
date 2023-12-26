@@ -96,6 +96,7 @@ class _CreateScreenState extends State<CreateScreen> {
             ),
             const SizedBox(height: 8),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
               onPressed: () {
                 _selectDate(context);
               },
@@ -103,6 +104,7 @@ class _CreateScreenState extends State<CreateScreen> {
                 _selectedDate == null
                     ? '날짜 선택'
                     : DateFormat.yMMMd().format(_selectedDate!),
+                style: const TextStyle(color: Colors.black),
               ),
             ),
           ],
