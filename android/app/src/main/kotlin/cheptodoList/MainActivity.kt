@@ -1,4 +1,4 @@
-package com.example.flutter_beginner_class
+package cheptodoList
 
 import io.flutter.embedding.android.FlutterActivity
 
