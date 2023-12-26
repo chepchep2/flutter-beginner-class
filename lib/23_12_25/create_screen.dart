@@ -22,7 +22,7 @@ class _CreateScreenState extends State<CreateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.amber,
         title: const Text(
           'Todo 작성',
         ),
@@ -48,8 +48,16 @@ class _CreateScreenState extends State<CreateScreen> {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.black),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.amber),
+            ),
             hintText: '오늘의 할일을 입력하세요.',
-            hintStyle: const TextStyle(color: Colors.red),
+            hintStyle: const TextStyle(color: Colors.black),
             // filled: true,
             // fillColor: Colors.yellow,
           ),

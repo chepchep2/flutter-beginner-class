@@ -16,6 +16,7 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amber,
         title: const Text('Todo 리스트'),
       ),
       body: ListView(
@@ -37,6 +38,7 @@ class _ListScreenState extends State<ListScreen> {
             .toList(),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
         onPressed: () async {
           await Navigator.push(
               context,
