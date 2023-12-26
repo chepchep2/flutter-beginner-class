@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/23_12_25/create_screen.dart';
-import 'package:flutter_beginner_class/23_12_25/todo.dart';
 import 'package:flutter_beginner_class/23_12_25/todo_item.dart';
 import 'package:flutter_beginner_class/23_12_25/todolist.dart';
 
