@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -81,15 +82,20 @@ class _MainScreenState extends State<MainScreen> {
                     return;
                   }
 
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResultScreen(
-                        height: double.parse(_heightController.text),
-                        weight: double.parse(_weightController.text),
-                      ),
-                    ),
-                  );
+                  context.push(Uri(path: '/result', queryParameters: {
+                    'height': double.parse(_heightController.text),
+                    'weight': double.parse(_weightController.text),
+                  }).toString());
+
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => ResultScreen(
+                  //       height: double.parse(_heightController.text),
+                  //       weight: double.parse(_weightController.text),
+                  //     ),
+                  //   ),
+                  // );
                 },
                 child: const Text('결과'),
               ),
