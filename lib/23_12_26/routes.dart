@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter_beginner_class/23_12_26/01_ro_router.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
+  initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',
@@ -10,7 +13,9 @@ final router = GoRouter(
     GoRoute(
       path: '/end',
       builder: (context, state) {
-        final person = Person(name: 'ㅋㅋㅋ', age: 30);
+        final person =
+            Person.fromJson(jsonDecode(state.uri.queryParameters['사람']!));
+
         return EndScreen(person: person);
       },
     ),
