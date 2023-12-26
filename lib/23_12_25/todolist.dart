@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner_class/23_12_25/list_screen.dart';
+import 'package:flutter_beginner_class/23_12_25/route/routes.dart';
 import 'package:flutter_beginner_class/23_12_25/todo.dart';
+
 import 'package:hive_flutter/hive_flutter.dart';
 
 late final Box<Todo> todos;
@@ -17,8 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ListScreen(),
+    return MaterialApp.router(
+      routerConfig: router,
     );
   }
 }
